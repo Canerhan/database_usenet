@@ -1,0 +1,50 @@
+name: Convert TRaSH JSON to YAML
+
+on:
+  workflow_dispatch:        # Manuell starten
+  schedule:
+    - cron: "0 3 1 * *"     # Jeden Monat am 1. um 03:00 Uhr
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your fork
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install yq (JSON → YAML converter)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq jq
+
+      - name: Clone upstream TRaSH JSON source
+        run: |
+          git clone https://github.com/Dictionarry-Hub/database /tmp/upstream
+
+      - name: Convert all JSON files to YAML
+        run: |
+          mkdir -p converted
+          find /tmp/upstream -name "*.json" | while read jsonfile; do
+            relpath="${jsonfile#/tmp/upstream/}"
+            yamlpath="converted/${relpath%.json}.yaml"
+            mkdir -p "$(dirname "$yamlpath")"
+            yq -P eval -o=yaml "$jsonfile" > "$yamlpath"
+          done
+
+      - name: Copy converted YAML into your repo
+        run: |
+          rsync -av --delete converted/ ./trash_yaml/
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Auto-update: JSON → YAML conversion"
+
+      - name: Push changes
+        run: |
+          git push
