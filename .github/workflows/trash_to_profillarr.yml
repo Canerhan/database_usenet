@@ -1,9 +1,9 @@
-name: Sync TRaSH Guides → Profillarr YAML
+name: Sync TRaSH JSON → Profillarr YAML
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 1 * *"   # Jeden Monat am 1. um 03:00
+    - cron: "0 3 1 * *"   # Jeden Monat am 1. um 03:00 Uhr
 
 jobs:
   sync:
@@ -24,41 +24,51 @@ jobs:
         run: |
           git clone https://github.com/TRaSH-Guides/Guides /tmp/trash
 
-      - name: Clean old YAML
+      - name: Ensure target folders exist
         run: |
-          rm -rf custom_formats/* profiles/* regex_patterns/* media_management/* templates/*
+          mkdir -p custom_formats profiles regex_patterns media_management templates
 
       - name: Convert TRaSH JSON → YAML (Radarr + Sonarr)
         run: |
-          # Custom Formats
-          find /tmp/trash/json -path "*/custom-formats/*.json" | while read json; do
-            yaml="custom_formats/$(basename "${json%.json}.yml")"
-            yq -P eval -o=yaml "$json" > "$yaml"
-          done
+          shopt -s globstar
 
-          # Profiles
-          find /tmp/trash/json -path "*/profiles/*.json" | while read json; do
-            yaml="profiles/$(basename "${json%.json}.yml")"
-            yq -P eval -o=yaml "$json" > "$yaml"
-          done
+          # Helper function
+          convert_json() {
+            src="$1"
+            dest="$2"
 
-          # Regex Patterns
-          find /tmp/trash/json/regex -name "*.json" | while read json; do
-            yaml="regex_patterns/$(basename "${json%.json}.yml")"
-            yq -P eval -o=yaml "$json" > "$yaml"
-          done
+            for json in $src/**/*.json; do
+              # Skip French files
+              if [[ "$json" == *"french"* ]]; then
+                echo "Skipping French file: $json"
+                continue
+              fi
 
-          # Media Management
-          find /tmp/trash/json/media-management -name "*.json" | while read json; do
-            yaml="media_management/$(basename "${json%.json}.yml")"
-            yq -P eval -o=yaml "$json" > "$yaml"
-          done
+              base=$(basename "${json%.json}.yml")
+              yq -P eval -o=yaml "$json" > "$dest/$base"
+              echo "Converted: $json → $dest/$base"
+            done
+          }
 
-          # Templates
-          find /tmp/trash/json/templates -name "*.json" | while read json; do
-            yaml="templates/$(basename "${json%.json}.yml")"
-            yq -P eval -o=yaml "$json" > "$yaml"
-          done
+          # Radarr
+          convert_json "/tmp/trash/docs/json/radarr/cf" "custom_formats"
+          convert_json "/tmp/trash/docs/json/radarr/cf-groups" "custom_formats"
+          convert_json "/tmp/trash/docs/json/radarr/naming" "media_management"
+          convert_json "/tmp/trash/docs/json/radarr/quality-profile-groups" "profiles"
+          convert_json "/tmp/trash/docs/json/radarr/quality-profiles" "profiles"
+          convert_json "/tmp/trash/docs/json/radarr/quality-size" "profiles"
+
+          # Sonarr
+          convert_json "/tmp/trash/docs/json/sonarr/cf" "custom_formats"
+          convert_json "/tmp/trash/docs/json/sonarr/cf-groups" "custom_formats"
+          convert_json "/tmp/trash/docs/json/sonarr/naming" "media_management"
+          convert_json "/tmp/trash/docs/json/sonarr/quality-profile-groups" "profiles"
+          convert_json "/tmp/trash/docs/json/sonarr/quality-profiles" "profiles"
+          convert_json "/tmp/trash/docs/json/sonarr/quality-size" "profiles"
+
+          # Regex + Templates (global)
+          convert_json "/tmp/trash/docs/json/regex" "regex_patterns"
+          convert_json "/tmp/trash/docs/json/templates" "templates"
 
       - name: Commit changes
         run: |
