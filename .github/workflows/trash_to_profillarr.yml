@@ -38,6 +38,12 @@ jobs:
             dest="$2"
 
             for json in "$src"/**/*.json; do
+
+              # Skip if not a file (fixes lexer error)
+              if [[ ! -f "$json" ]]; then
+                continue
+              fi
+
               # Skip French files
               if [[ "$json" == *"french"* ]]; then
                 echo "Skipping French file: $json"
@@ -66,22 +72,4 @@ jobs:
 
           # Sonarr
           convert_json "/tmp/trash/docs/json/sonarr/cf" "custom_formats"
-          convert_json "/tmp/trash/docs/json/sonarr/cf-groups" "custom_formats"
-          convert_json "/tmp/trash/docs/json/sonarr/naming" "media_management"
-          convert_json "/tmp/trash/docs/json/sonarr/quality-profile-groups" "profiles"
-          convert_json "/tmp/trash/docs/json/sonarr/quality-profiles" "profiles"
-          convert_json "/tmp/trash/docs/json/sonarr/quality-size" "profiles"
-
-          # Regex + Templates
-          convert_json "/tmp/trash/docs/json/regex" "regex_patterns"
-          convert_json "/tmp/trash/docs/json/templates" "templates"
-
-      - name: Commit changes
-        run: |
-          git config user.name "GitHub Action"
-          git config user.email "actions@github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "Monthly TRaSH → YAML sync"
-
-      - name: Push
-        run: git push
+          convert_json "/tmp/trash/docs/json
