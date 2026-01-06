@@ -1,0 +1,71 @@
+name: Sync TRaSH Guides → Profillarr YAML
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 1 * *"   # Jeden Monat am 1. um 03:00
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq jq
+
+      - name: Clone TRaSH Guides
+        run: |
+          git clone https://github.com/TRaSH-Guides/Guides /tmp/trash
+
+      - name: Clean old YAML
+        run: |
+          rm -rf custom_formats/* profiles/* regex_patterns/* media_management/* templates/*
+
+      - name: Convert TRaSH JSON → YAML (Radarr + Sonarr)
+        run: |
+          # Custom Formats
+          find /tmp/trash/json -path "*/custom-formats/*.json" | while read json; do
+            yaml="custom_formats/$(basename "${json%.json}.yml")"
+            yq -P eval -o=yaml "$json" > "$yaml"
+          done
+
+          # Profiles
+          find /tmp/trash/json -path "*/profiles/*.json" | while read json; do
+            yaml="profiles/$(basename "${json%.json}.yml")"
+            yq -P eval -o=yaml "$json" > "$yaml"
+          done
+
+          # Regex Patterns
+          find /tmp/trash/json/regex -name "*.json" | while read json; do
+            yaml="regex_patterns/$(basename "${json%.json}.yml")"
+            yq -P eval -o=yaml "$json" > "$yaml"
+          done
+
+          # Media Management
+          find /tmp/trash/json/media-management -name "*.json" | while read json; do
+            yaml="media_management/$(basename "${json%.json}.yml")"
+            yq -P eval -o=yaml "$json" > "$yaml"
+          done
+
+          # Templates
+          find /tmp/trash/json/templates -name "*.json" | while read json; do
+            yaml="templates/$(basename "${json%.json}.yml")"
+            yq -P eval -o=yaml "$json" > "$yaml"
+          done
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Monthly TRaSH → YAML sync"
+
+      - name: Push
+        run: git push
