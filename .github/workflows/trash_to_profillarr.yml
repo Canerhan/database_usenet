@@ -3,7 +3,7 @@ name: Sync TRaSH JSON → Profillarr YAML
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 1 * *"   # Jeden Monat am 1. um 03:00 Uhr
+    - cron: "0 3 1 * *"
 
 jobs:
   sync:
@@ -34,42 +34,58 @@ jobs:
           shopt -s globstar
 
           convert_json() {
-            src="$1"
-            dest="$2"
+            local src="$1"
+            local dest="$2"
 
             for json in "$src"/**/*.json; do
 
-              # Skip if not a file (fixes lexer error)
-              if [[ ! -f "$json" ]]; then
+              # Skip if not a file
+              if [ ! -f "$json" ]; then
                 continue
               fi
 
               # Skip French files
-              if [[ "$json" == *"french"* ]]; then
-                echo "Skipping French file: $json"
-                continue
-              fi
+              case "$json" in
+                *french*) continue ;;
+              esac
 
               # Skip dummy files
-              if [[ "$json" == *"dummy"* ]]; then
-                echo "Skipping dummy file: $json"
-                continue
-              fi
+              case "$json" in
+                *dummy*) continue ;;
+              esac
 
-              base=$(basename "${json%.json}.yml")
+              base="$(basename "${json%.json}.yml")"
               yq eval -P "$json" > "$dest/$base"
               echo "Converted: $json → $dest/$base"
             done
           }
 
           # Radarr
-          convert_json "/tmp/trash/docs/json/radarr/cf" "custom_formats"
-          convert_json "/tmp/trash/docs/json/radarr/cf-groups" "custom_formats"
-          convert_json "/tmp/trash/docs/json/radarr/naming" "media_management"
-          convert_json "/tmp/trash/docs/json/radarr/quality-profile-groups" "profiles"
-          convert_json "/tmp/trash/docs/json/radarr/quality-profiles" "profiles"
-          convert_json "/tmp/trash/docs/json/radarr/quality-size" "profiles"
+          convert_json /tmp/trash/docs/json/radarr/cf custom_formats
+          convert_json /tmp/trash/docs/json/radarr/cf-groups custom_formats
+          convert_json /tmp/trash/docs/json/radarr/naming media_management
+          convert_json /tmp/trash/docs/json/radarr/quality-profile-groups profiles
+          convert_json /tmp/trash/docs/json/radarr/quality-profiles profiles
+          convert_json /tmp/trash/docs/json/radarr/quality-size profiles
 
           # Sonarr
-          convert_json "/tmp/trash/docs/json/sonarr/cf" "custom_formats"
-          convert_json "/tmp/trash/docs/json
+          convert_json /tmp/trash/docs/json/sonarr/cf custom_formats
+          convert_json /tmp/trash/docs/json/sonarr/cf-groups custom_formats
+          convert_json /tmp/trash/docs/json/sonarr/naming media_management
+          convert_json /tmp/trash/docs/json/sonarr/quality-profile-groups profiles
+          convert_json /tmp/trash/docs/json/sonarr/quality-profiles profiles
+          convert_json /tmp/trash/docs/json/sonarr/quality-size profiles
+
+          # Regex + Templates
+          convert_json /tmp/trash/docs/json/regex regex_patterns
+          convert_json /tmp/trash/docs/json/templates templates
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Monthly TRaSH → YAML sync"
+
+      - name: Push
+        run: git push
