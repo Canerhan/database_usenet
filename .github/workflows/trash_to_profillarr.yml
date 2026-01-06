@@ -18,7 +18,7 @@ jobs:
       - name: Install yq
         run: |
           sudo apt-get update
-          sudo apt-get install -y yq jq
+          sudo apt-get install -y yq
 
       - name: Clone TRaSH Guides
         run: |
@@ -28,19 +28,24 @@ jobs:
         run: |
           mkdir -p custom_formats profiles regex_patterns media_management templates
 
-      - name: Convert TRaSH JSON → YAML (Radarr + Sonarr)
+      - name: Convert TRaSH JSON → YAML
         run: |
           shopt -s globstar
 
-          # Helper function
           convert_json() {
             src="$1"
             dest="$2"
 
-            for json in $src/**/*.json; do
+            for json in "$src"/**/*.json; do
               # Skip French files
               if [[ "$json" == *"french"* ]]; then
                 echo "Skipping French file: $json"
+                continue
+              fi
+
+              # Skip dummy files
+              if [[ "$json" == *"dummy"* ]]; then
+                echo "Skipping dummy file: $json"
                 continue
               fi
 
@@ -66,7 +71,7 @@ jobs:
           convert_json "/tmp/trash/docs/json/sonarr/quality-profiles" "profiles"
           convert_json "/tmp/trash/docs/json/sonarr/quality-size" "profiles"
 
-          # Regex + Templates (global)
+          # Regex + Templates
           convert_json "/tmp/trash/docs/json/regex" "regex_patterns"
           convert_json "/tmp/trash/docs/json/templates" "templates"
 
