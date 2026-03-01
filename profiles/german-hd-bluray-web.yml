@@ -12,43 +12,35 @@
   "minUpgradeFormatScore": 1,
   "items": [
     {
-      "name": "Unknown",
-      "allowed": false
-    },
-    {
-      "name": "SDTV",
-      "allowed": false
-    },
-    {
-      "name": "WEB 480p",
-      "allowed": false,
+      "name": "Merged QPs",
+      "allowed": true,
       "items": [
-        "WEBDL-480p",
-        "WEBRip-480p"
+        "Bluray-1080p",
+        "WEBRip-1080p",
+        "WEBDL-1080p",
+        "Bluray-720p",
+        "WEBDL-720p",
+        "WEBRip-720p"
       ]
     },
     {
-      "name": "DVD",
+      "name": "Bluray-2160p Remux",
       "allowed": false
     },
     {
-      "name": "Bluray-480p",
+      "name": "Bluray-2160p",
       "allowed": false
     },
     {
-      "name": "Bluray-576p",
-      "allowed": false
+      "name": "WEB 2160p",
+      "allowed": false,
+      "items": [
+        "WEBRip-2160p",
+        "WEBDL-2160p"
+      ]
     },
     {
-      "name": "HDTV-720p",
-      "allowed": false
-    },
-    {
-      "name": "HDTV-1080p",
-      "allowed": false
-    },
-    {
-      "name": "Raw-HD",
+      "name": "HDTV-2160p",
       "allowed": false
     },
     {
@@ -56,36 +48,44 @@
       "allowed": false
     },
     {
-      "name": "HDTV-2160p",
+      "name": "Raw-HD",
       "allowed": false
     },
     {
-      "name": "WEB 2160p",
+      "name": "HDTV-1080p",
+      "allowed": false
+    },
+    {
+      "name": "HDTV-720p",
+      "allowed": false
+    },
+    {
+      "name": "Bluray-576p",
+      "allowed": false
+    },
+    {
+      "name": "Bluray-480p",
+      "allowed": false
+    },
+    {
+      "name": "DVD",
+      "allowed": false
+    },
+    {
+      "name": "WEB 480p",
       "allowed": false,
       "items": [
-        "WEBDL-2160p",
-        "WEBRip-2160p"
+        "WEBRip-480p",
+        "WEBDL-480p"
       ]
     },
     {
-      "name": "Bluray-2160p",
+      "name": "SDTV",
       "allowed": false
     },
     {
-      "name": "Bluray-2160p Remux",
+      "name": "Unknown",
       "allowed": false
-    },
-    {
-      "name": "Merged QPs",
-      "allowed": true,
-      "items": [
-        "WEBRip-720p",
-        "WEBDL-720p",
-        "Bluray-720p",
-        "WEBDL-1080p",
-        "WEBRip-1080p",
-        "Bluray-1080p"
-      ]
     }
   ],
   "formatItems": {
