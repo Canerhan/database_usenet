@@ -1,114 +1,117 @@
 {
-  "trash_id": "5608c71bcebba0a5e666223bae8c9227",
+  "trash_id": "89bb526ec04af08433dee41e929fc965",
   "trash_scores": {
-    "default": 1700,
-    "sqp-1-1080p": 1000,
-    "sqp-1-web-1080p": 1000,
-    "sqp-1-2160p": 1000,
-    "sqp-1-web-2160p": 1000,
-    "french-multi-vf": 0,
-    "german-anime": 950
+    "default": 2100
   },
-  "name": "HD Bluray Tier 03",
+  "name": "German Anime Web Tier 01",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "BLURAY",
+      "name": "Baka",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Baka)$"
+      }
+    },
+    {
+      "name": "Pudding-sama",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Pudding-sama)$"
+      }
+    },
+    {
+      "name": "RTemp",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(RTemp)$"
+      }
+    },
+    {
+      "name": "snk",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\b(snk|shw)\\b"
+      }
+    },
+    {
+      "name": "Ainz",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Ainz)$"
+      }
+    },
+    {
+      "name": "TvR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(TvR)$"
+      }
+    },
+    {
+      "name": "Tanuki",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Tanuki)$"
+      }
+    },
+    {
+      "name": "HiSHiRO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HiSHiRO)$"
+      }
+    },
+    {
+      "name": "WeebPinn",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(WeebPinn)$"
+      }
+    },
+    {
+      "name": "Lynacchi",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Lynacchi)$"
+      }
+    },
+    {
+      "name": "WebDL",
       "implementation": "SourceSpecification",
       "negate": false,
-      "required": true,
+      "required": false,
       "fields": {
-        "value": 9
+        "value": 3
       }
     },
     {
-      "name": "Not REMUX",
-      "implementation": "QualityModifierSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 5
-      }
-    },
-    {
-      "name": "Not 2160p",
-      "implementation": "ResolutionSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 2160
-      }
-    },
-    {
-      "name": "BHDStudio",
-      "implementation": "ReleaseGroupSpecification",
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BHDStudio)$"
-      }
-    },
-    {
-      "name": "hallowed",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(hallowed)$"
-      }
-    },
-    {
-      "name": "HiFi",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HiFi)$"
-      }
-    },
-    {
-      "name": "HONE",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HONE)$"
-      }
-    },
-    {
-      "name": "LoRD",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(LoRD)$"
-      }
-    },
-    {
-      "name": "playHD",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(playHD)$"
-      }
-    },
-    {
-      "name": "SPHD",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SPHD)$"
-      }
-    },
-    {
-      "name": "W4NK3R",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(W4NK3R)$"
+        "value": 4
       }
     }
   ]

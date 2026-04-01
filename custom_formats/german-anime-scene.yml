@@ -1,114 +1,90 @@
 {
-  "trash_id": "5608c71bcebba0a5e666223bae8c9227",
+  "trash_id": "bf40cabd88c0025b03ad511d300d7394",
   "trash_scores": {
-    "default": 1700,
-    "sqp-1-1080p": 1000,
-    "sqp-1-web-1080p": 1000,
-    "sqp-1-2160p": 1000,
-    "sqp-1-web-2160p": 1000,
-    "french-multi-vf": 0,
-    "german-anime": 950
+    "default": 1700
   },
-  "name": "HD Bluray Tier 03",
+  "name": "German Anime Scene",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "BLURAY",
-      "implementation": "SourceSpecification",
-      "negate": false,
-      "required": true,
-      "fields": {
-        "value": 9
-      }
-    },
-    {
-      "name": "Not REMUX",
-      "implementation": "QualityModifierSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 5
-      }
-    },
-    {
-      "name": "Not 2160p",
-      "implementation": "ResolutionSpecification",
-      "negate": true,
-      "required": true,
-      "fields": {
-        "value": 2160
-      }
-    },
-    {
-      "name": "BHDStudio",
+      "name": "ONiGiRi",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BHDStudio)$"
+        "value": "^(ONiGiRi)$"
       }
     },
     {
-      "name": "hallowed",
+      "name": "STARS",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(hallowed)$"
+        "value": "^(STARS)$"
       }
     },
     {
-      "name": "HiFi",
+      "name": "DMPD",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HiFi)$"
+        "value": "^(DMPD)$"
       }
     },
     {
-      "name": "HONE",
+      "name": "OHD",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(HONE)$"
+        "value": "^(OHD)$"
       }
     },
     {
-      "name": "LoRD",
+      "name": "SAUERKRAUT",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(LoRD)$"
+        "value": "^(SAUERKRAUT)$"
       }
     },
     {
-      "name": "playHD",
+      "name": "3MINA",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(playHD)$"
+        "value": "^(3MINA)$"
       }
     },
     {
-      "name": "SPHD",
+      "name": "FWB",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SPHD)$"
+        "value": "^(FWB)$"
       }
     },
     {
-      "name": "W4NK3R",
+      "name": "BiGiNT",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(W4NK3R)$"
+        "value": "^(BiGiNT)$"
+      }
+    },
+    {
+      "name": "MRW",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MRW)$"
       }
     }
   ]

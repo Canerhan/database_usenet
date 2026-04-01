@@ -19,16 +19,16 @@
       ]
     },
     {
-      "name": "Bluray-2160p",
-      "allowed": true
-    },
-    {
       "name": "WEB 1080p",
       "allowed": true,
       "items": [
         "WEBRip-1080p",
         "WEBDL-1080p"
       ]
+    },
+    {
+      "name": "Bluray-2160p",
+      "allowed": true
     },
     {
       "name": "Bluray-1080p",
@@ -56,11 +56,11 @@
     },
     {
       "name": "Bluray-576p",
-      "allowed": true
+      "allowed": false
     },
     {
       "name": "WEB 480p",
-      "allowed": true,
+      "allowed": false,
       "items": [
         "WEBRip-480p",
         "WEBDL-480p"
@@ -68,15 +68,15 @@
     },
     {
       "name": "Bluray-480p",
-      "allowed": true
+      "allowed": false
     },
     {
       "name": "DVD",
-      "allowed": true
+      "allowed": false
     },
     {
       "name": "SDTV",
-      "allowed": true
+      "allowed": false
     },
     {
       "name": "Bluray-2160p Remux",

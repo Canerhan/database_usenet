@@ -1,110 +1,90 @@
 {
-  "trash_id": "d84935abd3f8556dcd51d4f27e22d0a6",
+  "trash_id": "9359e91ae245ff20a6747bd08191e24d",
   "trash_scores": {
-    "default": 1600,
-    "french-multi-vf": 0,
-    "german-anime": 150
+    "default": 2650
   },
-  "name": "WEB Tier 03",
+  "name": "German Anime Bluray Tier 02",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "WEBDL",
+      "name": "ABJ",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ABJ)$"
+      }
+    },
+    {
+      "name": "DRiFTKiNG",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\b(DRiFTKiNG|DK)\\b"
+      }
+    },
+    {
+      "name": "VECTOR",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(VECTOR)$"
+      }
+    },
+    {
+      "name": "ZeroTwo",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ZeroTwo)$"
+      }
+    },
+    {
+      "name": "ZeroTwo Aliases",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "\\b(BUTTERCUP|HARTZ02|XiSS|DOGPACK404|PRiNCESSDiANA|DiVA|WAREZCX|BiTCHNUGGET)\\b"
+      }
+    },
+    {
+      "name": "SiXTYNiNE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SiXTYNiNE)$"
+      }
+    },
+    {
+      "name": "PHM",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(PHM)$"
+      }
+    },
+    {
+      "name": "Bluray",
       "implementation": "SourceSpecification",
       "negate": false,
-      "required": false,
+      "required": true,
       "fields": {
-        "value": 3
+        "value": 6
       }
     },
     {
-      "name": "WEBRIP",
+      "name": "Not REMUX",
       "implementation": "SourceSpecification",
-      "negate": false,
-      "required": false,
+      "negate": true,
+      "required": true,
       "fields": {
-        "value": 4
-      }
-    },
-    {
-      "name": "BLOOM",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(BLOOM)$"
-      }
-    },
-    {
-      "name": "Dooky",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Dooky)$"
-      }
-    },
-    {
-      "name": "DRACULA",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(DRACULA)$"
-      }
-    },
-    {
-      "name": "HHWEB",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HHWEB)$"
-      }
-    },
-    {
-      "name": "NINJACENTRAL",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(NINJACENTRAL)$"
-      }
-    },
-    {
-      "name": "SLiGNOME",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SLiGNOME)$"
-      }
-    },
-    {
-      "name": "SwAgLaNdEr",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SwAgLaNdEr)$"
-      }
-    },
-    {
-      "name": "T4H",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(T4H)$"
-      }
-    },
-    {
-      "name": "ViSiON",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(ViSiON)$"
+        "value": 7
       }
     }
   ]

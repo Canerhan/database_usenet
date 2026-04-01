@@ -1,110 +1,135 @@
 {
-  "trash_id": "e6886871085226c3da1830830146846c",
+  "trash_id": "955cbe14c274da55564e50234ca555ff",
   "trash_scores": {
-    "default": -10000,
-    "german": 0,
-    "german-anime": 0
+    "default": 2900
   },
-  "name": "Generated Dynamic HDR",
+  "name": "German Anime Bluray Tier 01",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "BiTOR",
+      "name": "Baka",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BiTOR)$"
+        "value": "^(Baka)$"
       }
     },
     {
-      "name": "DepraveD",
+      "name": "Pudding-sama",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DepraveD)$"
+        "value": "^(Pudding-sama)$"
       }
     },
     {
-      "name": "Flights",
+      "name": "RTemp",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(Flights)$"
+        "value": "^(RTemp)$"
       }
     },
     {
-      "name": "GuyZo",
+      "name": "snk",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(GuyZo|BR-GuyZo)$"
+        "value": "\\b(snk|shw)\\b"
       }
     },
     {
-      "name": "SasukeducK",
+      "name": "Ainz",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(SasukeducK)$"
+        "value": "^(Ainz)$"
       }
     },
     {
-      "name": "tarunk9c",
+      "name": "TvR",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(tarunk9c)$"
+        "value": "^(TvR)$"
       }
     },
     {
-      "name": "VD0N",
+      "name": "Fuuko",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VD0N)$"
+        "value": "^(Fuuko)$"
       }
     },
     {
-      "name": "VECTOR",
+      "name": "AO",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VECTOR)$"
+        "value": "^(AO)$"
       }
     },
     {
-      "name": "VisionXpert",
+      "name": "CNY",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VisionXpert)$"
+        "value": "^(CNY)$"
       }
     },
     {
-      "name": "HDR10+",
-      "implementation": "ReleaseTitleSpecification",
+      "name": "FumoFriday",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "\\bHDR10(\\+|P(lus)?\\b)"
+        "value": "^(FumoFriday)$"
       }
     },
     {
-      "name": "DV",
-      "implementation": "ReleaseTitleSpecification",
+      "name": "Waechter",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "\\b(dv|dovi|dolby[ .]?v(ision)?)\\b"
+        "value": "^(Waechter)$"
+      }
+    },
+    {
+      "name": "GP",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(GP)$"
+      }
+    },
+    {
+      "name": "Bluray",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": true,
+      "fields": {
+        "value": 6
+      }
+    },
+    {
+      "name": "Not REMUX",
+      "implementation": "SourceSpecification",
+      "negate": true,
+      "required": true,
+      "fields": {
+        "value": 7
       }
     }
   ]

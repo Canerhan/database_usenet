@@ -1,74 +1,27 @@
 {
-  "trash_id": "e6886871085226c3da1830830146846c",
+  "trash_id": "da3e14f96e3b487d6a7267f417d4885b",
   "trash_scores": {
-    "default": -10000,
-    "german": 0,
-    "german-anime": 0
+    "default": 1900
   },
-  "name": "Generated Dynamic HDR",
+  "name": "German Anime Web Tier 02",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "BiTOR",
+      "name": "ABJ",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(BiTOR)$"
+        "value": "^(ABJ)$"
       }
     },
     {
-      "name": "DepraveD",
+      "name": "DRiFTKiNG",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(DepraveD)$"
-      }
-    },
-    {
-      "name": "Flights",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Flights)$"
-      }
-    },
-    {
-      "name": "GuyZo",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(GuyZo|BR-GuyZo)$"
-      }
-    },
-    {
-      "name": "SasukeducK",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SasukeducK)$"
-      }
-    },
-    {
-      "name": "tarunk9c",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(tarunk9c)$"
-      }
-    },
-    {
-      "name": "VD0N",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(VD0N)$"
+        "value": "\\b(DRiFTKiNG|DK)\\b"
       }
     },
     {
@@ -81,30 +34,66 @@
       }
     },
     {
-      "name": "VisionXpert",
+      "name": "ZeroTwo",
       "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "^(VisionXpert)$"
+        "value": "^(ZeroTwo)$"
       }
     },
     {
-      "name": "HDR10+",
-      "implementation": "ReleaseTitleSpecification",
+      "name": "ZeroTwo Aliases",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "\\bHDR10(\\+|P(lus)?\\b)"
+        "value": "\\b(BUTTERCUP|HARTZ02|XiSS|DOGPACK404|PRiNCESSDiANA|DiVA|WAREZCX|BiTCHNUGGET)\\b"
       }
     },
     {
-      "name": "DV",
-      "implementation": "ReleaseTitleSpecification",
+      "name": "SiXTYNiNE",
+      "implementation": "ReleaseGroupSpecification",
       "negate": false,
       "required": false,
       "fields": {
-        "value": "\\b(dv|dovi|dolby[ .]?v(ision)?)\\b"
+        "value": "^(SiXTYNiNE)$"
+      }
+    },
+    {
+      "name": "AO",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AO)$"
+      }
+    },
+    {
+      "name": "MELD",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MELD)$"
+      }
+    },
+    {
+      "name": "WebDL",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 3
+      }
+    },
+    {
+      "name": "WebRip",
+      "implementation": "SourceSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": 4
       }
     }
   ]

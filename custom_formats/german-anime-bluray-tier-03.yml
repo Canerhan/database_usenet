@@ -1,110 +1,90 @@
 {
-  "trash_id": "d84935abd3f8556dcd51d4f27e22d0a6",
+  "trash_id": "4713f52901c85b44724ec7ff7bef0aba",
   "trash_scores": {
-    "default": 1600,
-    "french-multi-vf": 0,
-    "german-anime": 150
+    "default": 2300
   },
-  "name": "WEB Tier 03",
+  "name": "German Anime Bluray Tier 03",
   "includeCustomFormatWhenRenaming": false,
   "specifications": [
     {
-      "name": "WEBDL",
+      "name": "SUBARU",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(SUBARU)$"
+      }
+    },
+    {
+      "name": "ATAX",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(ATAX)$"
+      }
+    },
+    {
+      "name": "HDC",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(HDC)$"
+      }
+    },
+    {
+      "name": "Mindus",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(Mindus)$"
+      }
+    },
+    {
+      "name": "4Baka",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(4Baka)$"
+      }
+    },
+    {
+      "name": "W33BSHiT",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(W33BSHiT)$"
+      }
+    },
+    {
+      "name": "AST4u",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(AST4u)$"
+      }
+    },
+    {
+      "name": "Bluray",
       "implementation": "SourceSpecification",
       "negate": false,
-      "required": false,
+      "required": true,
       "fields": {
-        "value": 3
+        "value": 6
       }
     },
     {
-      "name": "WEBRIP",
+      "name": "Not REMUX",
       "implementation": "SourceSpecification",
-      "negate": false,
-      "required": false,
+      "negate": true,
+      "required": true,
       "fields": {
-        "value": 4
-      }
-    },
-    {
-      "name": "BLOOM",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(BLOOM)$"
-      }
-    },
-    {
-      "name": "Dooky",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(Dooky)$"
-      }
-    },
-    {
-      "name": "DRACULA",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(DRACULA)$"
-      }
-    },
-    {
-      "name": "HHWEB",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(HHWEB)$"
-      }
-    },
-    {
-      "name": "NINJACENTRAL",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(NINJACENTRAL)$"
-      }
-    },
-    {
-      "name": "SLiGNOME",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SLiGNOME)$"
-      }
-    },
-    {
-      "name": "SwAgLaNdEr",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(SwAgLaNdEr)$"
-      }
-    },
-    {
-      "name": "T4H",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(T4H)$"
-      }
-    },
-    {
-      "name": "ViSiON",
-      "implementation": "ReleaseGroupSpecification",
-      "negate": false,
-      "required": false,
-      "fields": {
-        "value": "^(ViSiON)$"
+        "value": 7
       }
     }
   ]
