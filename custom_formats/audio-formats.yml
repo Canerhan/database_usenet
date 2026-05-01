@@ -4,7 +4,7 @@
   "trash_description": "Audio Formats, something you see mainly with Remuxes and UHD HQ Encodes. Add this only if you choose a Quality Profile that covers Remuxes and HQ UHD Encodes.",
   "custom_formats": [
     {
-      "name": "TrueHD Atmos",
+      "name": "TrueHD ATMOS",
       "trash_id": "0d7824bb924701997f874e7ff7d4844a",
       "required": true
     },
@@ -77,7 +77,8 @@
   "quality_profiles": {
     "include": {
       "WEB-1080p (Alternative)": "9d142234e45d6143785ac55f5a9e8dc9",
-      "WEB-2160p (Alternative)": "dfa5eaae7894077ad6449169b6eb03e0"
+      "WEB-2160p (Alternative)": "dfa5eaae7894077ad6449169b6eb03e0",
+      "Base Profile": "e58cf4e090184db3b3d7c79c1a9e9b4a"
     }
   }
 }
