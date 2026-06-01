@@ -4,7 +4,8 @@
     "default": -10000,
     "french-multi-vf": 0,
     "french-multi-vo": 0,
-    "german": -35000
+    "german": 0,
+    "german-anime": 0
   },
   "name": "Bad Dual Groups",
   "includeCustomFormatWhenRenaming": false,
@@ -25,6 +26,33 @@
       "required": false,
       "fields": {
         "value": "^(BAT)$"
+      }
+    },
+    {
+      "name": "CYPHER",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(CYPHER)$"
+      }
+    },
+    {
+      "name": "MLH",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(MLH)$"
+      }
+    },
+    {
+      "name": "XiQUEXiQUE",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(XiQUEXiQUE)$"
       }
     },
     {
@@ -70,6 +98,15 @@
       "required": false,
       "fields": {
         "value": "^(Cory)$"
+      }
+    },
+    {
+      "name": "EniaHD",
+      "implementation": "ReleaseGroupSpecification",
+      "negate": false,
+      "required": false,
+      "fields": {
+        "value": "^(EniaHD)$"
       }
     },
     {
