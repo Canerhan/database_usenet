@@ -22,6 +22,11 @@
       "name": "MainFrame",
       "trash_id": "8016f2f66e751dea613e6b5b94bf633c",
       "required": false
+    },
+    {
+      "name": "UHD Bluray RlsGrp (SQP-4 MA)",
+      "trash_id": "c3ecdda99c633e0743627c2cc91566ec",
+      "required": false
     }
   ],
   "quality_profiles": {
